@@ -217,8 +217,10 @@ outline: white;
 }
 }
 
-#shortcut-slider .carousel-control-next,#shortcut-slider .carousel-control-prev
-#brand-slider .carousel-control-next,#brand-slider .carousel-control-prev{
+#shortcut-slider .carousel-control-next,
+#shortcut-slider .carousel-control-prev,
+#brand-slider .carousel-control-next,
+#brand-slider .carousel-control-prev{
 top: unset !important;
 bottom: -50px !important;
 width: 80px;
@@ -227,7 +229,8 @@ background: rgba(179, 179, 179, 1);
 box-shadow: inset 0px -1px 2px rgba(0, 0, 0, 0.15), inset 0px 4px 4px rgba(255, 255, 255, 0.38);
 border-radius: 500px;
 }
-#shortcut-slider .carousel-indicators , #brand-slider .carousel-indicators{
+#shortcut-slider .carousel-indicators , 
+#brand-slider .carousel-indicators{
   top: unset !important;
 bottom: -60px !important;
 }
