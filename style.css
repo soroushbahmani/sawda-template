@@ -8,11 +8,24 @@
   --box-card-secondry: #626262;
   --text-in-secondry-warrning: #FEF403;
   --text-under-icon-sliders: #646464;
-  --color-range-1: #17A2BB
+  --text-secondry-0-sliders: #646464;
+  --text-secondry-1-sliders: #7E7E7E;
+  --color-range-1: #17A2BB;
+--bg-price-card-range :#888888;
+
 }
 
+.text-secondry-0-slider{
+  color: var(--text-secondry-0-sliders);
+}
+.text-secondry-1-slider{
+  color: var(--text-secondry-1-sliders);
+}
 .bg-card-secondry {
   background-color: #626262;
+}
+.bg-price-card-range {
+  background: var(--bg-price-card-range);
 }
 
 .card-secondry {
