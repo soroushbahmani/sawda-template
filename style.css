@@ -10,7 +10,7 @@
   --text-under-icon-sliders: #646464;
   --text-secondry-0-sliders: #646464;
   --text-secondry-1-sliders: #7E7E7E;
-  --color-range-1: #17A2BB;
+  --color-range-1: #FED215;
 --bg-price-card-range :#888888;
 
 }
@@ -312,7 +312,7 @@ html[dir='ltr'] .btn-group-vertical .nav-link.active::before {
   margin-top: 40px;
   height: 5px;
   border-radius: 5px;
-  background-color: #BBB;
+  /* background-color: #BBB; */
   position: relative;
 }
 
@@ -339,7 +339,20 @@ html[dir='ltr'] .btn-group-vertical .nav-link.active::before {
   background: none;
   pointer-events: none;
 }
+.range-button-min,
+.range-button-max{
+  position: absolute;
+margin: 12px -2%;
+  user-select: none !important;
+  background: none;
+  pointer-events: none;
+  color: #fff;
+}
 
+
+.range-input input[type="range"]{
+  cursor: ew-resize !important;
+}
 .range-input input[type="range"]::-webkit-slider-thumb {
   pointer-events: auto;
   height: 17px;
@@ -359,4 +372,14 @@ html[dir='ltr'] .btn-group-vertical .nav-link.active::before {
   -moz-appearance: none;
   background-color: var(--color-range-1);
 
+}
+
+.input-style-price{
+width: 100% !important;
+height: 100% !important;
+border: none !important;
+outline:  none !important;
+outline-offset: none !important;
+background: none !important;
+text-align: center;
 }

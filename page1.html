@@ -1334,46 +1334,53 @@
                         </div>
                         <div class="col-12 px-lg-3 px-ms-3 px-sm-2 px-2">
 
-                            <div class="bg-price-card-range">
-                                <div class="row m-0">
-                                    <div class="col-lg-5 mx-auto col-md-5 col-sm-12 col-12 p-2">
+                            <div class="bg-price-card-range rounded shadow-sm border-4 border-secondary border-bottom">
+                                <div class="row m-0 py-5 price-input">
+
+                                    <div class="col-lg-6 mx-auto col-md-5 col-sm-12 col-12 px-2 mb-2">
                                         <div class="bg-warning rounded-4 d-flex">
-                                            <div class="bg-light w-75 p-1 fs-5 rounded-4 d-flex justify-content-center text-secondry-1-slider">2000000</div>
-                                            <div class="bg- w-25 p-1 fs-5 rounded-4 d-flex justify-content-center text-secondry-0-slider">از</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-5 mx-auto col-md-5 col-sm-12 col-12 p-2">
-                                        <div class="bg-warning rounded-4 d-flex">
-                                            <div class="bg-light w-75 p-1 fs-5 rounded-4 d-flex justify-content-center text-secondry-1-slider">2000000</div>
-                                            <div class="bg- w-25 p-1 fs-5 rounded-4 d-flex justify-content-center text-secondry-0-slider">از</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 mt-3 pb-4">
-                                        <div class="price-input">
-                                            <div class="field">
-                                                <span>min</span>
-                                                <input type="number" name="" id="" class="input-min" value="2500" min="0"
+                                            <div
+                                                class="bg-light w-75 p-1 fs-5 rounded-4 d-flex justify-content-center text-secondry-1-slider">
+                                                <input type="number" name="" id=""
+                                                    class="input-max px-2 input-style-price" value="7500" min="0"
                                                     max="10000" step="100">
                                             </div>
-                                            <div class="separator">-</div>
-                                            <div class="field">
-                                                <span>max</span>
-                                                <input type="number" name="" id="" class="input-max" value="7500" min="0"
+                                            <div
+                                                class=" w-25 p-1 fs-5 rounded-4 d-flex justify-content-center text-secondry-0-slider">
+                                                از</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 mx-auto col-md-5 col-sm-12 col-12 px-2 mb-2">
+                                        <div class="bg-warning rounded-4 d-flex">
+                                            <div
+                                                class="bg-light w-75 fs-5 rounded-4 d-flex justify-content-center text-secondry-1-slider">
+                                                <input type="number" name="" id=""
+                                                    class="input-min px-2 input-style-price" value="2500" min="0"
                                                     max="10000" step="100">
                                             </div>
+                                            <div
+                                                class=" w-25 p-1 fs-5 rounded-4 d-flex justify-content-center text-secondry-0-slider">
+                                                تا</div>
                                         </div>
-                                        <div class="r-slider">
+                                    </div>
+                                    <div class="col-12 mt-1">
+                                        <div class="r-slider bg-light">
                                             <div class="r-progress"></div>
                                         </div>
                                         <div class="range-input">
-                                            <input type="range" class="range-min" name="" min="0" max="10000" value="2500" id="">
-                                            <input type="range" class="range-max" name="" min="0" max="10000" value="7500" id="">
+                                            <input type="range" class="range-min" name="" min="0" max="10000"
+                                                value="2500" id="">
+                                            <span class="range-button-min">1000</span>
+                                            <input type="range" class="range-max" name="" min="0" max="10000"
+                                                value="7500" id="">
+                                            <span class="range-button-max">1000</span>
+
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            
-                         
+
+
 
                         </div>
                     </div>
@@ -1728,6 +1735,8 @@
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
         </script>
     <script>
+
+
         var boxWarrning = document.getElementById('box-warnning').innerText;
         document.getElementById('box-warnning').innerText = boxWarrning.substr(0, 120)
         boxWarrning.length > 120 ? document.getElementById('box-warnning').innerText += '...' : '';
@@ -1735,60 +1744,205 @@
         var element = document.querySelector('#flexSwitchCheckChecked');
 
         function onChane() {
+
             if (element.hasAttribute("checked")) {
                 element.removeAttribute('checked');
                 document.querySelector('html').setAttribute('dir', 'ltr');
+                rtlPrice()
             } else {
                 element.setAttribute('checked', '');
                 document.querySelector('html').setAttribute('dir', 'rtl');
+                rtlPrice()
             }
         }
+
+
+
+        function rtlPrice() {
+            var html = document.querySelector('html');
+            const rangeInput = document.querySelectorAll(".range-input input"),
+                priceInput = document.querySelectorAll(".price-input input"),
+                progress = document.querySelector('.r-slider .r-progress'),
+                text_min = document.querySelector('.range-button-min'),
+                text_max = document.querySelector('.range-button-max');
+            let priceGap = 500;
+            let curency = Intl.NumberFormat('en-US');
+
+            if (!element.hasAttribute("checked")) {
+                // alert(1)
+                rangeInput.forEach(input => {
+
+                    let minVal = parseInt(rangeInput[0].value),
+                        maxVal = parseInt(rangeInput[1].value);
+                    if (maxVal - minVal < priceGap) {
+                        if (e.target.className === "range-min") {
+                            rangeInput[0].value = maxVal - priceGap;
+                        } else {
+                            rangeInput[1].value = minVal + priceGap;
+
+                        }
+                    } else {
+                        priceInput[0].value = minVal;
+                        priceInput[1].value = maxVal;
+                        progress.style.right = (minVal / rangeInput[0].max) * 100 + "%";
+                        progress.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
+                        text_min.style.left = ((minVal / rangeInput[0].max) * 100) + "%";
+                        text_min.innerText = curency.format(parseInt(rangeInput[0].value));
+                        text_max.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
+                        text_max.innerText = curency.format(parseInt(rangeInput[1].value));
+
+
+                    }
+                    input.addEventListener("input", e => {
+                        let minVal = parseInt(rangeInput[0].value),
+                            maxVal = parseInt(rangeInput[1].value);
+                        if (maxVal - minVal < priceGap) {
+                            if (e.target.className === "range-min") {
+                                rangeInput[0].value = maxVal - priceGap;
+                            } else {
+                                rangeInput[1].value = minVal + priceGap;
+
+                            }
+                        } else {
+                            priceInput[0].value = minVal;
+                            priceInput[1].value = maxVal;
+                            progress.style.left = (minVal / rangeInput[0].max) * 100 + "%";
+                            progress.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
+                            text_min.style.left = (minVal / rangeInput[0].max) * 100 + "%";
+                            text_min.innerText = curency.format(parseInt(rangeInput[0].value));
+                            text_max.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
+                            text_max.innerText = curency.format(parseInt(rangeInput[1].value));
+                        }
+
+                    })
+
+                })
+
+
+                priceInput.forEach(input => {
+                    input.addEventListener("input", e => {
+                        let minVal = parseInt(priceInput[0].value),
+                            maxVal = parseInt(priceInput[1].value);
+
+                        if ((maxVal - minVal >= priceGap) && maxVal <= 10000) {
+                            if (e.target.className === "input-min") {
+                                rangeInput[0].value = minVal;
+                                progress.style.left = (minVal / rangeInput[0].max) * 100 + "%";
+                                rangeInput[1].value = maxVal;
+                                progress.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
+                                text_min.style.left = (minVal / rangeInput[0].max) * 100 + "%";
+                                text_min.innerText = curency.format(parseInt(rangeInput[0].value));
+                                text_max.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
+                                text_max.innerText = curency.format(parseInt(rangeInput[1].value));
+                            } else {
+                                rangeInput[0].value = minVal;
+                                progress.style.left = (minVal / rangeInput[0].max) * 100 + "%";
+                                rangeInput[1].value = maxVal;
+                                progress.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
+                                text_min.style.left = (minVal / rangeInput[0].max) * 100 + "%";
+                                text_min.innerText = curency.format(parseInt(rangeInput[0].value));
+                                text_max.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
+                                text_max.innerText = curency.format(parseInt(rangeInput[1].value));
+                            }
+                        }
+
+                    })
+
+                })
+            }
+            else {
+                // alert(0)
+
+                rangeInput.forEach(input => {
+
+                    let minVal = parseInt(rangeInput[0].value),
+                        maxVal = parseInt(rangeInput[1].value);
+                    if (maxVal - minVal < priceGap) {
+                        if (e.target.className === "range-min") {
+                            rangeInput[0].value = maxVal - priceGap;
+                        } else {
+                            rangeInput[1].value = minVal + priceGap;
+
+                        }
+                    } else {
+                        priceInput[0].value = minVal;
+                        priceInput[1].value = maxVal;
+                        progress.style.right = (minVal / rangeInput[0].max) * 100 + "%";
+                        text_min.style.right = (minVal / rangeInput[0].max) * 100 + "%";
+                        progress.style.left = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
+                        text_max.style.right = (maxVal / rangeInput[1].max) * 100 + "%";
+                        text_min.innerText = curency.format(parseInt(rangeInput[0].value));
+                        text_max.innerText = curency.format(parseInt(rangeInput[1].value));
+
+                    }
+                    input.addEventListener("input", e => {
+                        let minVal = parseInt(rangeInput[0].value),
+                            maxVal = parseInt(rangeInput[1].value);
+                        if (maxVal - minVal < priceGap) {
+                            if (e.target.className === "range-min") {
+                                rangeInput[0].value = maxVal - priceGap;
+                            } else {
+                                rangeInput[1].value = minVal + priceGap;
+
+                            }
+                        } else {
+                            priceInput[0].value = minVal;
+                            priceInput[1].value = maxVal;
+                            progress.style.right = (minVal / rangeInput[0].max) * 100 + "%";
+                            text_min.style.right = (minVal / rangeInput[0].max) * 100 + "%";
+                            progress.style.left = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
+                            text_max.style.right = (maxVal / rangeInput[1].max) * 100 + "%";
+                            text_min.innerText = curency.format(parseInt(rangeInput[0].value));
+                            text_max.innerText = curency.format(parseInt(rangeInput[1].value));
+                        }
+                    })
+                })
+
+                priceInput.forEach(input => {
+                    input.addEventListener("input", e => {
+                        let minVal = parseInt(priceInput[0].value),
+                            maxVal = parseInt(priceInput[1].value);
+
+                        if ((maxVal - minVal >= priceGap) && maxVal <= 10000) {
+                            if (e.target.className === "input-min") {
+                                rangeInput[0].value = minVal;
+                                rangeInput[1].value = maxVal;
+                                progress.style.right = (minVal / rangeInput[0].max) * 100 + "%";
+                                progress.style.left = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
+                                text_min.style.right = (minVal / rangeInput[0].max) * 100 + "%";
+                                text_max.style.right = (maxVal / rangeInput[1].max) * 100 + "%";
+                                text_min.innerText = curency.format(parseInt(rangeInput[0].value));
+                                text_max.innerText = curency.format(parseInt(rangeInput[1].value));
+                            } else {
+                                rangeInput[0].value = minVal;
+                                rangeInput[1].value = maxVal;
+                                progress.style.right = (minVal / rangeInput[0].max) * 100 + "%";
+                                progress.style.left = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
+                                text_min.style.right = (minVal / rangeInput[0].max) * 100 + "%";
+                                text_max.style.right = (maxVal / rangeInput[1].max) * 100 + "%";
+                                text_min.innerText = curency.format(parseInt(rangeInput[0].value));
+                                text_max.innerText = curency.format(parseInt(rangeInput[1].value));
+                            }
+                        }
+
+                    })
+
+                })
+
+
+            }
+
+
+        }
+
+        rtlPrice()
+
     </script>
 
     <script>
-        const rangeInput = document.querySelectorAll(".range-input input"),
-            priceInput = document.querySelectorAll(".price-input input"),
-            progress = document.querySelector('.r-slider .r-progress');
-        let priceGap = 500;
-        rangeInput.forEach(input => {
-            input.addEventListener("input", e => {
-                let minVal = parseInt(rangeInput[0].value),
-                    maxVal = parseInt(rangeInput[1].value);
-                if (maxVal - minVal < priceGap) {
-                    if (e.target.className === "range-min") {
-                        rangeInput[0].value = maxVal - priceGap;
-                    } else {
-                        rangeInput[1].value = minVal + priceGap;
 
-                    }
-                } else {
-                    priceInput[0].value = minVal;
-                    priceInput[1].value = maxVal;
-                    progress.style.left = (minVal / rangeInput[0].max) * 100 + "%";
-                    progress.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
 
-                }
 
-            })
-
-        })
-        priceInput.forEach(input => {
-            input.addEventListener("input", e => {
-                let minVal = parseInt(priceInput[0].value),
-                    maxVal = parseInt(priceInput[1].value);
-                if ((maxVal - minVal >= priceGap) && maxVal <= 10000) {
-                    if (e.target.className === "input-min") {
-                        rangeInput[0].value = minVal;
-                        progress.style.left = (minVal / rangeInput[0].max) * 100 + "%";
-                    } else {
-                        rangeInput[1].value = maxVal;
-                        progress.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
-                    }
-                }
-
-            })
-
-        })
     </script>
 </body>
 
