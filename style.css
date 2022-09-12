@@ -87,6 +87,8 @@
 .box-shadow{
   box-shadow: var(--shadow);
 
+}.footer{
+  box-shadow: inset 0px -6px 8px rgb(0 0 0 / 15%), inset 0px 6px 8px rgb(88 88 88 / 38%);
 }
 
 .box-rotate-in-secondry {
