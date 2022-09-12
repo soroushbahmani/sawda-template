@@ -1,3 +1,7 @@
+@import url(//db.onlinewebfonts.com/c/235b71a9b409e684e865eb4a996e925e?family=IRANYekan);
+* , body ,html , input , div {
+  font-family: 'IRANYekan' !important;
+}
 :root {
   --gray: #cdcdcd;
   --gray-100: rgb(137, 137, 137);
