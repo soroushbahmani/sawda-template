@@ -1,5 +1,5 @@
 :root {
-  --gray: #EBEBEB;
+  --gray: #cdcdcd;
   --gray-100: rgb(137, 137, 137);
   --gray-200: rgb(218, 218, 218);
   --box-warrning: #FED215;
@@ -11,19 +11,22 @@
   --text-secondry-0-sliders: #646464;
   --text-secondry-1-sliders: #7E7E7E;
   --color-range-1: #FED215;
---bg-price-card-range :#888888;
+  --bg-price-card-range: #888888;
 
 }
 
-.text-secondry-0-slider{
+.text-secondry-0-slider {
   color: var(--text-secondry-0-sliders);
 }
-.text-secondry-1-slider{
+
+.text-secondry-1-slider {
   color: var(--text-secondry-1-sliders);
 }
+
 .bg-card-secondry {
   background-color: #626262;
 }
+
 .bg-price-card-range {
   background: var(--bg-price-card-range);
 }
@@ -125,24 +128,52 @@ html[dir='rtl'] .slider-bottom-header-warrning {
 }
 
 html[dir='rtl'] .input-search {
-  border-top-right-radius: 4px !important;
-  border-bottom-right-radius: 4px !important;
+  border-radius: 4px !important;
+
+  position: relative;z-index: 10;
+  padding-left: 60px !important;
+
 }
 
 html[dir='ltr'] .input-search {
-  border-top-left-radius: 4px !important;
-  border-bottom-left-radius: 4px !important;
+  padding-right: 60px !important;
+  border-radius: 4px !important;
+  position: relative;z-index: 10;
 }
 
 
 html[dir='rtl'] .input-search-btn {
-  border-top-left-radius: 4px !important;
-  border-bottom-left-radius: 4px !important;
+  top: -4%;
+  left: 2%;
+  height: 100%;
+  position: absolute;
+  border: none;
+  outline: none;
+  outline-offset: none;
+  z-index: 11 !important;
+  background: inherit;
+
 }
 
 html[dir='ltr'] .input-search-btn {
-  border-top-right-radius: 4px !important;
-  border-bottom-right-radius: 4px !important;
+  top: -4%;
+  right: 2%;
+  height: 100%;
+  position: absolute;
+  border: none;
+  outline: none;
+  outline-offset: none;
+  z-index: 11 !important;
+  background: inherit;
+}
+.input-search-btn:active ,
+.input-search-btn:focus,
+.input-search-btn:hover 
+{
+  outline: none !important;
+  outline-offset: none !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 
 .slider-bottom-header-img {
@@ -261,18 +292,31 @@ html[dir='ltr'] .btn-group-vertical .nav-link.active::before {
 #brand-slider .carousel-control-next,
 #brand-slider .carousel-control-prev {
   top: unset !important;
-  bottom: -50px !important;
+  /* bottom: -50px !important; */
   width: 80px;
-
+  position: static !important;
   background: rgba(179, 179, 179, 1);
   box-shadow: inset 0px -1px 2px rgba(0, 0, 0, 0.15), inset 0px 4px 4px rgba(255, 255, 255, 0.38);
   border-radius: 500px;
 }
 
+.card-next-prev {
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-next-prev-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
 #shortcut-slider .carousel-indicators,
 #brand-slider .carousel-indicators {
   top: unset !important;
-  bottom: -60px !important;
+  /* bottom: -60px !important; */
+  position: static !important;
 }
 
 .brand-box {
@@ -318,11 +362,13 @@ html[dir='ltr'] .btn-group-vertical .nav-link.active::before {
 
 .r-slider .r-progress {
   height: 5px;
-  left: 25%;
-  right: 25%;
+  /* left: 25%;
+  right: 25%; */
   position: absolute;
   border-radius: 5px;
   background-color: var(--color-range-1);
+
+
 
 }
 
@@ -339,10 +385,11 @@ html[dir='ltr'] .btn-group-vertical .nav-link.active::before {
   background: none;
   pointer-events: none;
 }
+
 .range-button-min,
-.range-button-max{
+.range-button-max {
   position: absolute;
-margin: 12px -2%;
+  margin: 12px -2%;
   user-select: none !important;
   background: none;
   pointer-events: none;
@@ -350,9 +397,10 @@ margin: 12px -2%;
 }
 
 
-.range-input input[type="range"]{
+.range-input input[type="range"] {
   cursor: ew-resize !important;
 }
+
 .range-input input[type="range"]::-webkit-slider-thumb {
   pointer-events: auto;
   height: 17px;
@@ -360,7 +408,7 @@ margin: 12px -2%;
   border-radius: 50%;
   -webkit-appearance: none;
   background-color: var(--color-range-1);
-  border: none;
+  border: 2px solid white;
 }
 
 .range-input input[type="range"]::-moz-slider-thumb {
@@ -374,12 +422,12 @@ margin: 12px -2%;
 
 }
 
-.input-style-price{
-width: 100% !important;
-height: 100% !important;
-border: none !important;
-outline:  none !important;
-outline-offset: none !important;
-background: none !important;
-text-align: center;
+.input-style-price {
+  width: 100% !important;
+  height: 100% !important;
+  border: none !important;
+  outline: none !important;
+  outline-offset: none !important;
+  background: none !important;
+  text-align: center;
 }
