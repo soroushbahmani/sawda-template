@@ -346,7 +346,7 @@ html[dir='ltr'] .btn-group-vertical .nav-link.active::before {
 
 .shortcut-box {
   width: 180px;
-  /* height: 150px; */
+  padding: 5px 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -447,4 +447,30 @@ html[dir='ltr'] .btn-group-vertical .nav-link.active::before {
   outline-offset: none !important;
   background: none !important;
   text-align: center;
+}
+
+.btn-row-coulmn{
+  display: flex;
+  align-items: center;
+}
+html[dir='ltr'] .btn-row-coulmn{
+  bottom: -3px !important;
+  right: 0px !important;
+  justify-content: end;
+
+}
+
+html[dir='rtl'] .btn-row-coulmn{
+  bottom: -3px !important;
+  left: 0px !important;
+  justify-content: start;
+
+}
+
+.brand-style .nav-link.active{
+  background-color: var(--box-warrning);
+}
+.brand-style .nav-link{
+  background-color: rgba(179, 179, 179, 0.63);
+
 }
