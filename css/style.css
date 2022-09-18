@@ -30,7 +30,8 @@
 
   --shadow: 0px 0px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 2px rgba(0, 0, 0, 0.15), inset 0px 0px 0px rgba(255, 256, 255, 0.38)b;
   /* --shadow-2: inset 0 4px 4px 0 rgba(255, 255, 255, 0.38), inset 0 -3px 2px 0 rgba(0, 0, 0, 0.15) */
-  --shadow-2:0px 4px 5px rgba(0, 0, 0, 0.05), inset 0px -3px 2px rgba(0, 0, 0, 0.15), inset 0px 4px 4px rgba(255, 255, 255, 0.38)
+  --shadow-2:
+  0px 4px 5px rgba(0, 0, 0, .05), inset 0px -3px 2px rgba(0, 0, 0, .15), inset 0px 4px 4px rgba(255, 255, 255, .38)
 }
 
 .text-gray {
@@ -135,8 +136,8 @@
 }
 
 .box-rotate-in-secondry div {
-  width: 55px;
-  height: 55px;
+  width: 48px;
+  height: 48px;
 }
 
 .header-image {
@@ -170,8 +171,8 @@ html[dir='ltr'] .slider-bottom-header-warrning {
   width: 300px;
   top: 12%;
   right: 0% !important;
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 
 }
 .slider-bottom-header-warrning h1{
@@ -186,8 +187,11 @@ html[dir='rtl'] .slider-bottom-header-warrning {
   width: 300px;
   top: 12%;
   left: 0% !important;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.input-search{
+  border: none;
 }
 html[dir='rtl'] .input-search {
   border-radius: 10px !important;
