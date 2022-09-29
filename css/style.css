@@ -816,7 +816,7 @@ width: 100% !important;
   width: 100%;
   display: flex;
   justify-content: center;
-  background: rgba(250, 250, 250, 0.58);
+  background: rgba(250, 250, 250, 0.3);
   align-items: center;
   }
 
@@ -843,4 +843,30 @@ html[dir='ltr'] .divider_in_page3_card_price{
 html[dir='ltr'] .card-setUp-ltr{
   flex-direction: row-reverse !important;
 
+}
+
+input[type = 'text'],input[type = 'password'],input[type = 'email']{
+  direction: ltr !important;
+}
+
+button{
+  outline: none !important;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
+  border-color:#FED215 ;
+  background: #FED215 !important;
+  color: #212529 !important;
+}
+.nav-link.active{
+  background-color: var(--bg-card-warning) !important;
+  color: #212529 !important;
+}
+.input-group{
+  direction: ltr;
+}
+
+.nav-tabs .nav-link{
+  border-top-left-radius: 10px !important;
+    border-top-right-radius: 10px !important;
 }
