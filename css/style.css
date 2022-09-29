@@ -492,6 +492,7 @@ html[dir='rtl'] .border-card-car-row{
 #brand-slider-2 .carousel-control-prev,
 #sliderCarDetails .carousel-control-next,
 #sliderCarDetails .carousel-control-prev{
+ 
   top: unset !important;
   /* bottom: -50px !important; */
   width: 80px;
@@ -502,7 +503,9 @@ html[dir='rtl'] .border-card-car-row{
 }
 
 
-
+.carousel{
+  direction: ltr !important;
+}
 
 .brand-slider-2-box h3 {
   color: rgba(0, 149, 255, 1);
@@ -664,20 +667,26 @@ html[dir='ltr'] .brand-slider-2-box {
   display: flex;
   align-items: center;
 }
-
-html[dir='ltr'] .btn-row-coulmn {
+.btn-row-coulmn {
   bottom: -3px !important;
   right: 0px !important;
   justify-content: end;
 
 }
+/* 
+html[dir='ltr'] .btn-row-coulmn {
+  bottom: -3px !important;
+  right: 0px !important;
+  justify-content: end;
 
-html[dir='rtl'] .btn-row-coulmn {
+} */
+
+/* html[dir='rtl'] .btn-row-coulmn {
   bottom: -3px !important;
   left: 0px !important;
   justify-content: end;
 
-}
+} */
 
 .brand-style .nav-link.active {
   background-color: var(--box-warrning);
