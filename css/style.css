@@ -849,24 +849,24 @@ input[type = 'text'],input[type = 'password'],input[type = 'email']{
   direction: ltr !important;
 }
 
-button{
+.page6 button{
   outline: none !important;
 }
 
-.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
+.page6 .nav-tabs .nav-item.show .nav-link, .page6 .nav-tabs .nav-link.active{
   border-color:#FED215 ;
   background: #FED215 !important;
   color: #212529 !important;
 }
-.nav-link.active{
+.page6 .nav-link.active{
   background-color: var(--bg-card-warning) !important;
   color: #212529 !important;
 }
-.input-group{
+.page6 .input-group{
   direction: ltr;
 }
 
-.nav-tabs .nav-link{
+.page6 .nav-tabs .nav-link{
   border-top-left-radius: 10px !important;
     border-top-right-radius: 10px !important;
 }
