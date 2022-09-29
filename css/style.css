@@ -224,6 +224,9 @@
   .height-slider-content {
     height: 100% !important;
   }
+  .page3 .carousel-inner{
+    margin-top: 10px !important;
+  }
 
 }
 
