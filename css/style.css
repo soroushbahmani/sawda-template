@@ -252,6 +252,22 @@ html {
     padding: 0 !important;
   }
 
+  .page9 .content-tab {
+    margin-top: -9rem !important;
+    padding: 0 !important;
+  }
+  .page9 .box-warning-header{
+    height: 160px !important;
+  }
+  .page9 .button-header-info {
+    justify-content: start !important;
+    margin: 5px 0 !important;
+
+  }
+
+  .page9 .text-header-info {
+    margin: 5px 0 !important;
+  }
   .page7 .box-warning-header {
     height: 310px !important;
   }
@@ -274,7 +290,7 @@ html {
 
   }
 
-  .text-header-info {
+  .page7 .text-header-info {
     margin: 5px 0 !important;
   }
 }
@@ -300,11 +316,28 @@ html {
     margin-top: 0rem !important;
     padding: 0 !important;
   }
+  .page9 .content-tab {
+    margin-top: -1rem !important;
+    padding: 0 !important;
+  }
 
+  .page9 .box-warning-header {
+    height: 280px !important;
+  }
   .page7 .box-warning-header {
     height: 535px !important;
   }
 
+  .page9 .text-header-info {
+    font-size: 16px !important;
+    margin: 10px 0 !important;
+  }
+
+  .page9 .button-header-info {
+    justify-content: start !important;
+    margin: 10px 0 !important;
+
+  }
   .page7 .text-header-info {
     font-size: 16px !important;
     margin: 10px 0 !important;
