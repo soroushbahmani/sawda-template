@@ -598,6 +598,13 @@ html[dir='rtl'] .border-card-car-row {
 }
 
 @media(max-width: 1100px) {
+  .parent-table{
+    width: 100%;
+    overflow-x: auto;
+  }
+  .parent-table table{
+    width:1035px;
+  }
   .header-image-svg {
     margin-bottom: 0px !important;
   }
@@ -1179,14 +1186,6 @@ font-size: 12px;
 }
 
 
-html[dir='rtl'] .page8 table {
-  direction: ltr !important;
-
-
-
-}html[dir='ltr'] .page8 table{
-  direction: ltr !important;
-}
 
 .page8 button:focus{
   box-shadow: none;
@@ -1200,3 +1199,20 @@ html[dir='rtl'] .page8 table {
   background-color: var(--box-card-secondry);
 color: white;
 }
+
+html[dir='ltr'] .page8 table thead tr th:first-child{
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+} html[dir='ltr'] .page8 table thead tr th:last-child{
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+} 
+
+html[dir='rtl'] .page8 table thead tr th:first-child{
+
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+} html[dir='rtl'] .page8 table thead tr th:last-child{
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+} 
